@@ -1,0 +1,5 @@
+127.0.0.1 localhost
+{% for k, v in hostvars.iteritems() -%}
+{% set interface = 'ansible_' + inventory_hosts['interface'] %}
+{{ hostvars[k][interface]['ipv4']['address'] }} {{ k }}
+{% endfor %}
