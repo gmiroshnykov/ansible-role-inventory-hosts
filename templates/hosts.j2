@@ -1,9 +1,0 @@
-127.0.0.1 localhost
-{% for k, v in hostvars.iteritems() -%}
-{% if k == inventory_hostname %}
-127.0.0.1 {{ k }}
-{% else %}
-{% set interface = 'ansible_' + inventory_hosts['interface'] %}
-{{ hostvars[k][interface]['ipv4']['address'] }} {{ k }}
-{% endif %}
-{% endfor %}
