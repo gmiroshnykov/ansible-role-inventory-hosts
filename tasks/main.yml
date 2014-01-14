@@ -1,4 +1,5 @@
-- name: add all ansible hosts to /etc/hosts
+---
+- name: save all hosts known to Ansible into /etc/hosts
   sudo: true
   lineinfile: >
     dest=/etc/hosts
