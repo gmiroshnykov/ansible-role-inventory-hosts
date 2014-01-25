@@ -9,6 +9,7 @@ Role Variables
 
     inventory_hosts:
       interface: eth0   # get IP address from this network interface
+      localhosts: []    # extra list of localhost aliases to associate with '127.0.0.1'
 
 License
 -------
