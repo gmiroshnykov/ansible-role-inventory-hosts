@@ -14,3 +14,11 @@
     line="127.0.0.1 {{ item }} # {{ item | md5 }}"
     regexp='{{ item | md5 }}$'
   with_items: inventory_hosts.localhosts
+
+- name: add aliases to /etc/hosts
+  sudo: true
+  lineinfile: >
+    dest=/etc/hosts
+    line="{{ item.ip }} {{ item.name }} # {{ item.name | md5 }}"
+    regexp='{{ item.name | md5 }}$'
+  with_items: inventory_hosts.aliases
